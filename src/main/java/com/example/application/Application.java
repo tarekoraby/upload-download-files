@@ -15,7 +15,7 @@ import com.vaadin.flow.component.dependency.NpmPackage;
 public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
-        LaunchUtil.launchBrowserInDevelopmentMode(SpringApplication.run(Application.class, args));
+        SpringApplication.run(Application.class, args);
     }
 
 }

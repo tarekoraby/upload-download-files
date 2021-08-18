@@ -1,35 +1,17 @@
-# My App
+# Files Upload and Download in Java
 
-This project can be used as a starting point to create your own Vaadin application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+This project enables users to upload and download files to and from the server.
+The UI allows users to select local files to be uploaded to the server.
+Once a file upload is completed, the UI offers a link allowing users to download
+the file back from the server. 
+
+The web app is developed entirely in Java using Vaadin Flow (no HTML or JavaScript involved).
 
 ## Running the application
-The project is a standard Maven project. To run it from the command line,
-type `mvnw` (Windows), or `./mvnw` (Mac & Linux), then open
-http://localhost:8080 in your browser.
+The project is a standard Maven project. To run it from the command line, 
+type `mvnw spring-boot:run` (on Windows), or `./mvnw spring-boot:run` (on macOS or Linux).
 
-You can also import the project to your IDE of choice as you would with any
-Maven project. Read more on [how to set up a development environment for
-Vaadin projects](https://vaadin.com/docs/latest/guide/install) (Windows, Linux, macOS).
-
-## Deploying to Production
-To create a production build, call `mvnw clean package -Pproduction` (Windows),
-or `./mvnw  clean package -Pproduction` (Mac & Linux).
-This will build a JAR file with all the dependencies and front-end resources,
-ready to be deployed. The file can be found in the `target` folder after the build completes.
-
-Once the JAR file is built, you can run it using
-`java -jar target/myapp-1.0-SNAPSHOT.jar` (NOTE, replace 
-`myapp-1.0-SNAPSHOT.jar` with the name of your jar).
-
-## Project structure
-
-- `MainView.java` in `src/main/java` contains the navigation setup (i.e., the 
-  side/top bar and the main menu). This setup uses 
-  [App Layout](https://vaadin.com/components/vaadin-app-layout).
-- `views` package in `src/main/java` contains the server-side Java views of your application.
-- `views` folder in `frontend/` contains the client-side JavaScript views of your application.
-- `themes` folder in `frontend/`  contains the custom CSS styles.
+Then, in your browser, open http://localhost:8080/upload-download.
 
 ## Useful links
 
