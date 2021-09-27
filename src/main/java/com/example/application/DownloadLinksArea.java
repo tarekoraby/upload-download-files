@@ -8,6 +8,7 @@ import com.vaadin.flow.server.StreamResource;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 public class DownloadLinksArea extends VerticalLayout {
 
@@ -29,18 +30,20 @@ public class DownloadLinksArea extends VerticalLayout {
     }
 
     private void addLinkToFile(File file) {
-        FileInputStream stream;
-        try {
-            stream = new FileInputStream(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return;
-        }
-
-        StreamResource streamResource = new StreamResource(file.getName(), () -> stream);
+        StreamResource streamResource = new StreamResource(file.getName(), () -> getStream(file));
         Anchor link = new Anchor(streamResource, String.format("%s (%d KB)", file.getName(),
                 (int) file.length() / 1024));
         link.getElement().setAttribute("download", true);
         add(link);
+    }
+
+    private InputStream getStream(File file) {
+        FileInputStream stream = null;
+        try {
+            stream = new FileInputStream(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return stream;
     }
 }
