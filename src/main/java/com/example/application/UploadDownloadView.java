@@ -2,10 +2,12 @@ package com.example.application;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.router.RouteAlias;
 
 import java.io.File;
 
 @Route("upload-download")
+@RouteAlias("")
 public class UploadDownloadView extends VerticalLayout {
 
     public UploadDownloadView() {
